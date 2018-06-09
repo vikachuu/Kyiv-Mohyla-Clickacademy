@@ -11,6 +11,8 @@ public class UpgradeManager : MonoBehaviour {
     public int upgradeCost;
     public int upgradePPS;
 
+    public float upgradeCostCoefficient;
+
 	void Update () {
         upgradeInfo.text = upgradeName + '\n' + upgradeCost + " points +" + upgradePPS + " pps";
 	}
@@ -22,6 +24,8 @@ public class UpgradeManager : MonoBehaviour {
         {
             tableClicker.points -= upgradeCost;
             tableClicker.pointsPerClick += upgradePPS;
+
+            upgradeCost = (int) Mathf.Round(upgradeCost * upgradeCostCoefficient);
         }
     }
 }
