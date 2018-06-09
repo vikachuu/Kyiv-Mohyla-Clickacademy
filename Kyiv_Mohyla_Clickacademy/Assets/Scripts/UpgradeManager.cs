@@ -10,10 +10,17 @@ public class UpgradeManager : MonoBehaviour {
     public string upgradeName;
     public int upgradeCost;
     public int upgradePPS;
+    public float upgradeCostCoefficient; // for next upgrade cost
 
-    public float upgradeCostCoefficient;
+    private int baseUpgradeCost;
+    private int upgradeCounter = 0; // how many upgrades were bought
 
-	void Update () {
+    void Start()
+    {
+        baseUpgradeCost = upgradeCost;
+    }
+
+    void Update () {
         upgradeInfo.text = upgradeName + '\n' + upgradeCost + " points +" + upgradePPS + " pps";
 	}
 
@@ -24,8 +31,9 @@ public class UpgradeManager : MonoBehaviour {
         {
             tableClicker.points -= upgradeCost;
             tableClicker.pointsPerClick += upgradePPS;
+            upgradeCounter++;
 
-            upgradeCost = (int) Mathf.Round(upgradeCost * upgradeCostCoefficient);
+            upgradeCost = (int) Mathf.Round(baseUpgradeCost*Mathf.Pow(upgradeCostCoefficient, upgradeCounter));
         }
     }
 }
