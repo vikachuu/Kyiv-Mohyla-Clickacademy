@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /*
  * Common class for upgrades which add points per CLICK
@@ -18,6 +19,9 @@ public class UpgradePPCManager : MonoBehaviour {
     private int baseUpgradeCost;
     public int upgradeCounter = 0; // how many upgrades were bought
 
+    public Color notReadyToBuy;
+    public Color readyToBuy;
+
     void Start()
     {
         baseUpgradeCost = upgradeCost;
@@ -25,6 +29,14 @@ public class UpgradePPCManager : MonoBehaviour {
 
     void Update () {
         upgradeInfo.text = upgradeName + '\n' + upgradeCost + " points +" + upgradePPC + " p/c";
+        if (tableClicker.points >= upgradeCost)
+        {
+            GetComponent<Image>().color = readyToBuy;
+        }
+        else
+        {
+            GetComponent<Image>().color = notReadyToBuy;
+        }
 	}
 
     public void BoughtUpdatePPC()
