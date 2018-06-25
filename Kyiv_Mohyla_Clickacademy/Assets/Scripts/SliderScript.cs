@@ -4,23 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class SliderScript : MonoBehaviour {
-    public Slider hungerSlider;
-    private float currentHunger;
+    public Slider slider;
 
-	// Use this for initialization
+    public float current;
+
 	void Start () {
-        currentHunger = hungerSlider.maxValue;
+        current = slider.maxValue;
 	}
 	
-	// Update is called once per frame
 	void Update () {
-        currentHunger -= Time.deltaTime;
-        hungerSlider.value = currentHunger;
-        if(hungerSlider.value <= 0)
+        current -= Time.deltaTime;
+        slider.value = current;
+        if(slider.value <= 0) // TODO: add condition
         {
             //TODO: if player is _
-            currentHunger = hungerSlider.maxValue;
-            hungerSlider.value = hungerSlider.maxValue;
+            current = slider.maxValue;
+            slider.value = slider.maxValue;
         }
 	}
 }

@@ -14,6 +14,8 @@ public class TableClicker : MonoBehaviour {
     public int pointsPerClick = 1;
     public int pointsPerSecond = 0;
 
+    public int timeToAddPoint = 1;
+
     public UpgradePPSManager[] ppsItemsArray; // array of point per SECOND upgrades
 
     void Start()
@@ -59,7 +61,7 @@ public class TableClicker : MonoBehaviour {
         while(true)
         {
             AutoPointsPerSecond();
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(timeToAddPoint);
         }
     }
 }
