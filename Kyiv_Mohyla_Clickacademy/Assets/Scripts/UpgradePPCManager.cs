@@ -11,6 +11,8 @@ public class UpgradePPCManager : MonoBehaviour {
     public TableClicker tableClicker;
     public UnityEngine.UI.Text upgradeInfo;
 
+    public Sprite[] images;
+
     public string upgradeName;
     public int upgradeCost;
     public int upgradePPC; // points per CLICK
@@ -50,6 +52,11 @@ public class UpgradePPCManager : MonoBehaviour {
 
             // new cost
             upgradeCost = (int) Mathf.Round(baseUpgradeCost*Mathf.Pow(upgradeCostCoefficient, upgradeCounter));
+
+            if (upgradeCounter < images.Length)
+            {
+                tableClicker.GetComponent<Image>().sprite = images[upgradeCounter];
+            }
         }
     }
 }

@@ -8,7 +8,10 @@ using UnityEngine.UI;
 public class UpgradePPSManager : MonoBehaviour {
 
     public TableClicker tableClicker;
+    public Image chair;
     public UnityEngine.UI.Text upgradeInfo;
+
+    public Sprite[] images;
 
     public string upgradeName;
     public int upgradeCost;
@@ -51,6 +54,11 @@ public class UpgradePPSManager : MonoBehaviour {
 
             // new cost
             upgradeCost = (int)Mathf.Round(baseUpgradeCost * Mathf.Pow(upgradeCostCoefficient, upgradeCounter));
+
+            if (upgradeCounter < images.Length)
+            {
+                chair.sprite = images[upgradeCounter];
+            }
         }
     }
 }
