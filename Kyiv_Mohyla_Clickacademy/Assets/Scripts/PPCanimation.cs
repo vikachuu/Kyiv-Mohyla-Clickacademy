@@ -16,10 +16,16 @@ using UnityEngine;
 		void Update () {
 			if (Input.GetMouseButtonDown(0))
 			{
-				Rigidbody2D bulletInstance = Instantiate(projectile, projectileSpawnPoint.position, Quaternion.Euler(new Vector3(0, 0, transform.localEulerAngles.z))) as Rigidbody2D;
-				bulletInstance.GetComponent<Rigidbody2D>().AddForce(projectileSpawnPoint.up * projectileVelocity);
-				id++;
+				//Rigidbody2D bulletInstance = Instantiate(projectile, projectileSpawnPoint.position, Quaternion.Euler(new Vector3(0, 0, transform.localEulerAngles.z))) as Rigidbody2D;
+				//bulletInstance.GetComponent<Rigidbody2D>().AddForce(projectileSpawnPoint.up * projectileVelocity);
+				//id++;
 			}
+		}
+
+		public void OnClicked() {
+			Rigidbody2D bulletInstance = Instantiate(projectile, projectileSpawnPoint.position, Quaternion.Euler(new Vector3(0, 0, transform.localEulerAngles.z))) as Rigidbody2D;
+			bulletInstance.GetComponent<Rigidbody2D>().AddForce(projectileSpawnPoint.up * projectileVelocity);
+			id++;
 		}
 	}
 
