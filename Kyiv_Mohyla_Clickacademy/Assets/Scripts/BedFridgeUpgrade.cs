@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BedUpgrade : MonoBehaviour {
+public class BedFridgeUpgrade : MonoBehaviour {
 
     public TableClicker tableClicker;
     public SliderController sliderController;
     public UnityEngine.UI.Text upgradeInfo;
+
+    public Sprite[] images;
 
     public string upgradeName;
     public int upgradeCost;
@@ -23,12 +25,11 @@ public class BedUpgrade : MonoBehaviour {
     void Start()
     {
         baseUpgradeCost = upgradeCost;
-        perClick = sliderController.addPerClick;
     }
 
     void Update()
     {
-        upgradeInfo.text = upgradeName + '\n' + upgradeCost + " points " + perClick + " p/c";
+        upgradeInfo.text = upgradeName + '\n' + upgradeCost + " points +" + perClick + " p/c";
         if (tableClicker.points >= upgradeCost)
         {
             GetComponent<Image>().color = readyToBuy;
@@ -46,11 +47,15 @@ public class BedUpgrade : MonoBehaviour {
         {
             tableClicker.points -= upgradeCost;
             sliderController.addPerClick += perClick;
-            perClick = sliderController.addPerClick;
             upgradeCounter++;
 
             // new cost
             upgradeCost = (int)Mathf.Round(baseUpgradeCost * Mathf.Pow(upgradeCostCoefficient, upgradeCounter));
+
+            if (upgradeCounter < images.Length)
+            {
+                sliderController.GetComponent<Image>().sprite = images[upgradeCounter];
+            }            
         }
     }
 }
