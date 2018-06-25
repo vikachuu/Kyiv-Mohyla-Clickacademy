@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Fridge : MonoBehaviour {
+public class SliderController : MonoBehaviour {
     public SliderScript sliderType;
     public float addPerClick;
 
@@ -17,7 +17,6 @@ public class Fridge : MonoBehaviour {
 
     public void Clicked()
     {
-        Debug.Log("clicked");
         sliderType.current += addPerClick;
         if (sliderType.current >= sliderType.slider.maxValue)
         {
