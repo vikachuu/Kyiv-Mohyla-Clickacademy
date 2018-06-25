@@ -21,6 +21,9 @@ public class SliderController : MonoBehaviour {
         if (sliderType.current >= sliderType.slider.maxValue)
         {
             sliderType.current = sliderType.slider.maxValue;
+        }else if (sliderType.current <= 0)
+        {
+            sliderType.current = 0;
         }
     }
 }

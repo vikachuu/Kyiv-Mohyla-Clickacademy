@@ -10,6 +10,9 @@ public class TableClicker : MonoBehaviour {
     public UnityEngine.UI.Text pointsPerClickDisplay;
     public UnityEngine.UI.Text pointsPerSecondDisplay;
 
+    public SliderScript hungerSlider;
+    public SliderScript sleepSlider;
+
     public int points = 0;
     public int pointsPerClick = 1;
     public int pointsPerSecond = 0;
@@ -41,9 +44,10 @@ public class TableClicker : MonoBehaviour {
     public int GetPointsPerSecond()
     {
         int points = 0;
-        foreach(UpgradePPSManager item in ppsItemsArray)
+        int coeff = (hungerSlider.current <= 0 || sleepSlider.current <= 0) ? 0 : 1; // if slider is 0 - stop passive income
+        foreach (UpgradePPSManager item in ppsItemsArray)
         {
-            points += item.upgradePPS * item.upgradeCounter; // counter (?)
+            points += item.upgradePPS * item.upgradeCounter*coeff; // multiply by slider value
         }
         return points;
     }
