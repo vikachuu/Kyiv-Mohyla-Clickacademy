@@ -9,7 +9,7 @@ public class UpgradePPSManager : MonoBehaviour {
 
     public TableClicker tableClicker;
     public Image chair;
-    public UnityEngine.UI.Text upgradeInfo;
+    public Text upgradeInfo;
 
     public Sprite[] images;
 

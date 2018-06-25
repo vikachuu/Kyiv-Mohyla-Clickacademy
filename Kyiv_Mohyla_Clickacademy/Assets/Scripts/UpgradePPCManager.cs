@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class UpgradePPCManager : MonoBehaviour {
 
     public TableClicker tableClicker;
-    public UnityEngine.UI.Text upgradeInfo;
+    public Text upgradeInfo;
 
     public Sprite[] images;
 

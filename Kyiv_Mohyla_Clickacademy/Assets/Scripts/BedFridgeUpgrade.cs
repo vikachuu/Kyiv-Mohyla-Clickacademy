@@ -7,7 +7,7 @@ public class BedFridgeUpgrade : MonoBehaviour {
 
     public TableClicker tableClicker;
     public SliderController sliderController;
-    public UnityEngine.UI.Text upgradeInfo;
+    public Text upgradeInfo;
 
     public Sprite[] images;
 
@@ -18,6 +18,8 @@ public class BedFridgeUpgrade : MonoBehaviour {
 
     private int baseUpgradeCost;
     public int upgradeCounter = 0; // how many upgrades were bought
+
+    public int increaseMaxValue;
 
     public Color notReadyToBuy;
     public Color readyToBuy;
@@ -48,6 +50,9 @@ public class BedFridgeUpgrade : MonoBehaviour {
             tableClicker.points -= upgradeCost;
             sliderController.addPerClick += perClick;
             upgradeCounter++;
+
+            sliderController.sliderType.slider.maxValue += increaseMaxValue;
+            sliderController.sliderType.current = sliderController.sliderType.slider.maxValue;
 
             // new cost
             upgradeCost = (int)Mathf.Round(baseUpgradeCost * Mathf.Pow(upgradeCostCoefficient, upgradeCounter));
