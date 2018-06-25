@@ -15,6 +15,7 @@ public class SliderScript : MonoBehaviour {
 	void Update () {
         current -= Time.deltaTime;
         slider.value = current;
+
         if(slider.value <= 0) // TODO: add condition
         {
             //TODO: if player is _

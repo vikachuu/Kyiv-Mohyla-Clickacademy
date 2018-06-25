@@ -5,19 +5,19 @@ using UnityEngine.UI;
 
 public class SliderController : MonoBehaviour {
     public SliderScript sliderType;
-    public float addPerClick;
+    public float addPerClick = 1;
 
 	void Start () {
-		
-	}
+
+    }
 	
 	void Update () {
-        sliderType.slider.value = sliderType.current;
+        sliderType.slider.value = sliderType.current;        
     }
 
     public void Clicked()
     {
-        sliderType.current += addPerClick;
+       sliderType.current += addPerClick;
         if (sliderType.current >= sliderType.slider.maxValue)
         {
             sliderType.current = sliderType.slider.maxValue;
