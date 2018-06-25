@@ -18,8 +18,8 @@ public class SliderScript : MonoBehaviour {
         if(slider.value <= 0) // TODO: add condition
         {
             //TODO: if player is _
-            current = slider.maxValue;
-            slider.value = slider.maxValue;
+            //current = slider.maxValue;
+            //slider.value = slider.maxValue;
         }
 	}
 }
