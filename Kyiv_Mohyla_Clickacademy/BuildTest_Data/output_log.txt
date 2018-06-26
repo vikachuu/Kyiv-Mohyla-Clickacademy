@@ -15,7 +15,7 @@ Platform assembly: D:\UnityProjects\Kyiv-Mohyla-Clickacademy\Kyiv_Mohyla_Clickac
 Loading D:\UnityProjects\Kyiv-Mohyla-Clickacademy\Kyiv_Mohyla_Clickacademy\BuildTest_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: D:\UnityProjects\Kyiv-Mohyla-Clickacademy\Kyiv_Mohyla_Clickacademy\BuildTest_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading D:\UnityProjects\Kyiv-Mohyla-Clickacademy\Kyiv_Mohyla_Clickacademy\BuildTest_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.025 seconds
+- Completed reload, in  0.028 seconds
 Platform assembly: D:\UnityProjects\Kyiv-Mohyla-Clickacademy\Kyiv_Mohyla_Clickacademy\BuildTest_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\UnityProjects\Kyiv-Mohyla-Clickacademy\Kyiv_Mohyla_Clickacademy\BuildTest_Data\Managed\System.dll (this message is harmless)
 desktop: 1366x768 50Hz; virtual: 1366x768 at 0,0
@@ -23,7 +23,13 @@ desktop: 1366x768 50Hz; virtual: 1366x768 at 0,0
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 2.666195 ms
+UnloadTime: 3.496370 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.996451 ms
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 477.
+Total: 0.389231 ms (FindLiveObjects: 0.039870 ms CreateObjectMapping: 0.024080 ms MarkObjects: 0.309490 ms  DeleteObjects: 0.015000 ms)
+
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 4e0 -> priority: 1 
-  Thread -> id: 31ac -> priority: 1 
+  Thread -> id: b3c -> priority: 1 
+  Thread -> id: 32c0 -> priority: 1 
