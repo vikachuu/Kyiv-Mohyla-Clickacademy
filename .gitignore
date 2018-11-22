@@ -3,9 +3,10 @@
 [Oo]bj/
 [Bb]uild/
 [Bb]uilds/
+[Bb]uildTest_Data/
 Assets/AssetStoreTools*
 
-KMC.mp4
+BuildTest.exe
 
 # Visual Studio cache directory
 .vs/
