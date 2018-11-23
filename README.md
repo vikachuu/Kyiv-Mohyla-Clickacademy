@@ -1,5 +1,5 @@
 # Kyiv-Mohyla-Clickacademy
-### 2D unity clicker game
+### 2D Unity clicker game
 
 Study project of GameDev course at National University of Kyiv-Mohyla Academy. 
 
